@@ -15,7 +15,16 @@ bash packages.sh
 before running the code
 
 ## Instructions
+```{bash}
 $python --version
+Python 3.11.4
+
+$gcc --version
+gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
+```
+
+
 
 
 ## Requirements
+$python --version
