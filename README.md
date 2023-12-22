@@ -56,7 +56,7 @@ $gcc --version
 gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 ```
 
-You will also need to install the libraries found on the requirement.txt file, in particular, you will need to install the Python library Skyfield.
+You will also need to install the libraries found on the "*requirement.txt*" file, in particular, you will need to install the Python library Skyfield.
 
 
 
