@@ -24,7 +24,7 @@ gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 ```
 
 
-
-
 ## Requirements
+To correctly execute the code, you will need to install the Python library Skyfield.
+
 
