@@ -4,7 +4,7 @@
 
 This program simulates the trajectory of a rocket and tell us at what time we should launch the rocket in order to achieve the international space station.
 It will
-1. Calculate ISS coordinates ("*coord_skyfield*")
+1. Calculate ISS coordinates ("*coord_skyfield.py*")
 2. Find the parameters ("*simulation.c*") and plot the graphs ("*graphs.py*")
 3. Determine launch time ("*simulation.c*")
 
