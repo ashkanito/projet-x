@@ -1,2 +1,2 @@
-Travel time : 366.000000
-Launch time : 16:06:04.
+Travel time (in seconds): 373.000000
+Launch time : 16:05:59
