@@ -15,5 +15,7 @@ bash packages.sh
 before running the code
 
 ## Instructions
+$python --version
+
 
 ## Requirements
