@@ -208,7 +208,7 @@ struct time {
 struct time when_to_launch(int hour, int min, int sec, int travel_time){ //travel time as an integer
     struct time launch_time;
     int sec_iss = hour*3600 + min*60 + sec;
-    int launch_in_sec = sec_iss - travel_time; //launch in seconds is an integer
+    int launch_in_sec = sec_iss - travel_time; //launch in seconds as an integer
 
     launch_time.hour = launch_in_sec/3600;
     int p = launch_in_sec%3600;
@@ -494,8 +494,9 @@ int main(){
     struct time launch_time_rocket = when_to_launch(hour_min, min_min, sec_min, t_min);
     printf("The launch time will need to be at %02d:%02d:%02d.\n", launch_time_rocket.hour, launch_time_rocket.min, launch_time_rocket.sec);
 
+    //Print the final output on a separate text file
+    
     // Open a file in write mode ('w')
-    // w mode mean it writes a new file even if it already exists
     file = fopen("final_output.txt", "w");
 
     // Check if the file is successfully opened
