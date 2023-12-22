@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
+
 
 
 
@@ -204,6 +206,7 @@ struct time {
     int min;
     int sec;
 };
+
 struct time when_to_launch(int hour, int min, int sec, int travel_time){ //travel time an integer
     struct time launch_time;
     int sec_iss = hour*3600 + min*60 + sec;
@@ -218,6 +221,16 @@ struct time when_to_launch(int hour, int min, int sec, int travel_time){ //trave
 }
 
 int main(){
+        // Run Python script using system()
+    int status = system("python3 coord_skyfield.py");
+    
+    if (status == -1) {
+        printf("Failed to execute the command.\n");
+        return 1;
+    } else {
+        printf("Python script executed successfully.\n");
+    }
+
     //extract the coordinates of ISS at minimal distance
     struct Coordinates_min_dist conc[50];
     double n = readfile("output_coords.txt", 1, conc);
@@ -353,19 +366,19 @@ int main(){
                         // we want to find the minimum time to reach 417km at a slow speed
                         if((z>alt_min_km-dz)&&(z<alt_min_km+dz)&&(fabs(v)<5)&&(t<t_min)){ 
                                 t_min = t;
-                                printf("FT1  : %f newtons, ", FT1);
-                                printf("FT2  : %f newtons, ", FT2);
-                                printf("mass fuel 1 : %f kg, ", m_fuel1);
-                                printf("mass fuel 2 : %f kg, ", m_fuel2);
+                                //printf("FT1  : %f newtons, ", FT1);
+                                //printf("FT2  : %f newtons, ", FT2);
+                                //printf("mass fuel 1 : %f kg, ", m_fuel1);
+                                //printf("mass fuel 2 : %f kg, ", m_fuel2);
                                 FT1_plot = FT1;
                                 FT2_plot = FT2;
                                 m_fuel1_plot = m_fuel1;
                                 m_fuel2_plot = m_fuel2;
-                                printf("temps  : %f secondes, ", t);
-                                printf("altitude : %f meters, ", z);
-                                printf("mass : %f kg", m);
-                                printf(" speed : %f m/s\n", v);
-                                printf("t_min : %f\n", t_min);
+                                //printf("temps  : %f secondes, ", t);
+                                //printf("altitude : %f meters, ", z);
+                                //printf("mass : %f kg", m);
+                                //printf(" speed : %f m/s\n", v);
+                                //printf("t_min : %f\n", t_min);
                                 break;
                         
                         }
@@ -474,4 +487,14 @@ int main(){
     
     struct time launch_time_rocket = when_to_launch(hour_min, min_min, sec_min, t_min);
     printf("The launch time will need to be at %02d:%02d:%02d.\n", launch_time_rocket.hour, launch_time_rocket.min, launch_time_rocket.sec);
+
+    // Run Python script using system()
+    int stats = system("python3 graphs.py");
+    
+    if (stats == -1) {
+        printf("Failed to execute the command.\n");
+        return 1;
+    } else {
+        printf("Python script executed successfully.\n");
+    }
 }
