@@ -23,7 +23,7 @@ Overview
 
 
 ## Instructions
-The code is run first compile *simulation.c*
+To run the code, first compile *simulation.c*
 ```{bash}
 gcc simulation.c
 ```
