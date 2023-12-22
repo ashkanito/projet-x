@@ -72,7 +72,7 @@ double density(double z) {
         return exp(1.140564E-10*pow(z,4) -2.130756E-07*pow(z,3) + 1.570762E-04*pow(z,2) -0.07029296*z -12.89844);
     }
     printf("Temperature: %f, pression: %f\n", Tm,P);
-    return P/(287.053*Tm);  
+    return P/(287.053*Tm);   //R=287.053 J/kg.K = 8314/M with M the air molar mass
 }
 
 //2.2. Force Fdrag
@@ -113,7 +113,7 @@ double c_d(double c_d0, double beta){
 
 
 double Lapse(double z) {
-    double h = 6371*z/(6371+z); //aller voir site "comprehensive mathematical model of the Earth’s atmosphere"
+    double h = 6371*z/(6371+z); //http://www.braeunig.us/space/atmmodel.htm
     double L =0;
     if (h<11) {
         L = -6.5;	
