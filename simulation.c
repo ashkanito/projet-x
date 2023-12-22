@@ -72,8 +72,7 @@ double density(double z) {
         return exp(1.140564E-10*pow(z,4) -2.130756E-07*pow(z,3) + 1.570762E-04*pow(z,2) -0.07029296*z -12.89844);
     }
     printf("Temperature: %f, pression: %f\n", Tm,P);
-    return P/(287.053*Tm);  //R=287.053 J/kg.K = 8314/M avec M masse molaire de l'air
-    //pareil a ce quil fait sur son code parceque 0.029/8.314 = 1/287.053 (a peu pres)
+    return P/(287.053*Tm);  
 }
 
 //2.2. Force Fdrag
@@ -81,9 +80,7 @@ double F_drag(double z, double v, double diametre, double Cd) {
     double Aire = 3.1415 *pow(diametre/2, 2); //cross-sectional area of the rocket
     return (1/2) * density(z) * pow(v,2) *Cd * Aire;
 }
-//valeurs à utiliser:
-//Cd0 = 0.75, diametre = 3.07 (diametre du module Cygnus (fusee qui livre à ISS) en[m])
-//QU?: vitesse?
+
 
 //3) WAVE DRAG
 //local velocity of sound : 
@@ -222,7 +219,8 @@ struct time when_to_launch(int hour, int min, int sec, int travel_time){ //trave
 }
 
 int main(){
-        // Run Python script using system()
+    // We asked ChatGPT3.5 to run our python filed (coord_skyfield) from our c file
+    // Run Python script using system()
     int status = system("python coord_skyfield.py");
     
     if (status == -1) {
@@ -262,7 +260,7 @@ int main(){
     double FT2_MAX = 396300; //maximum thrust of rocket stage 2 
     double P = P0;
     double diameter = 3.9; // in meter
-    double cd0 = 0.75;
+    double cd0 = 0.75; //aerodynamic coefficients (approximately for a rocket)
     double I_sp1 = 297; // units : [s] specific impulse of rocket (sea level)
     double I_sp2 = 304; // units : [s] specific impulse of castor30B
     double t_final = 600; // choice of the final time
