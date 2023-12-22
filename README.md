@@ -10,9 +10,9 @@ It will
 
 
 ## Project Structure
-- "coord_skyfield" contains a function that returns the coordinates of ISS at the time of interest
-- "graphs.py" plots the graphs for our parameters over time
-- "simulation.c" contains the code to run the simulation
+- "*coord_skyfield*" contains a function that returns the coordinates of ISS at the time of interest
+- "*graphs.py*" plots the graphs for our parameters over time
+- "*simulation.c*" contains the code to run the simulation
 
 ### Implementation details
 
@@ -30,6 +30,18 @@ bash packages.sh
 before running the code
 
 ## Instructions
+The code is run first compile simulation.c
+```{bash}
+gcc simulation.c
+```
+
+```{bash}
+./a.exe
+```
+
+
+
+## Requirements
 ```{bash}
 $python --version
 Python 3.11.4
@@ -38,8 +50,6 @@ $gcc --version
 gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 ```
 
-
-## Requirements
-To correctly execute the code, you will need to install the Python library Skyfield.
+Additionnaly, to correctly execute the code, you will need to install the Python library Skyfield.
 
 
