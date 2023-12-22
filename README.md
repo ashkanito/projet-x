@@ -56,7 +56,7 @@ $gcc --version
 gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 ```
 
-Install the Python library skyfield by typing the following line on the command prompt
+Install the Python libraries figured in requirement.txt by typing the following line on the command prompt
 ```{bash}
 pip install skyfield
 pip install numpy
