@@ -1,6 +1,8 @@
 # Rocket Simulation
-##Project Desscription
+##Project Description
+
 This program simulates the trajectory of a rocket and tell us at what time we should launch the rocket in order to achieve the international space station.
+
 ## Files
 description des files
 ## Modules
