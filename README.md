@@ -20,7 +20,7 @@ Code:
 Ouputs:
 - "*output.txt*" is a semi-colon delimited file
 - "*ouput_coords.txt*" is a single line file
-- 
+
 ### Implementation details
 
 Overview
