@@ -10,10 +10,17 @@ It will
 
 
 ## Project Structure
+
+### Files description
+Code:
 - "*coord_skyfield*" contains a function that returns the coordinates of ISS at the time of interest
 - "*graphs.py*" plots the graphs for our parameters over time
 - "*simulation.c*" contains the code to run the simulation
 
+Ouputs:
+- "*output.txt*" is a semi-colon delimited file
+- "*ouput_coords.txt*" is a single line file
+- 
 ### Implementation details
 
 Overview
@@ -21,10 +28,7 @@ Overview
 - Python is used to plot the graphs and find variables with the specific Python library Skyfield
 - C is used to find the needed parameters and output of the program
 
-Outputs
-- "*output.txt*" is a semi-colon delimited file
-- "*ouput_coords.txt*" is a single line file
-- 
+
 ## Instructions
 To run the code, first compile *simulation.c*
 ```{bash}
