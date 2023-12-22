@@ -176,7 +176,7 @@ struct Coordinates_min_dist {
     int sec;
 };
 
-int readfile(char *filename, int length, struct Coordinates_min_dist *conc) { //NOTEPERSO: SOURCE: midterm d'entrainement
+int readfile(char *filename, int length, struct Coordinates_min_dist *conc) { //see training midterm
   /*
     Reads in data file called "filename"
     up to "length" number of rows
@@ -205,10 +205,10 @@ struct time {
     int sec;
 };
 
-struct time when_to_launch(int hour, int min, int sec, int travel_time){ //travel time an integer
+struct time when_to_launch(int hour, int min, int sec, int travel_time){ //travel time as an integer
     struct time launch_time;
     int sec_iss = hour*3600 + min*60 + sec;
-    int launch_in_sec = sec_iss - travel_time; //launch in seconds an integer
+    int launch_in_sec = sec_iss - travel_time; //launch in seconds is an integer
 
     launch_time.hour = launch_in_sec/3600;
     int p = launch_in_sec%3600;
@@ -234,7 +234,7 @@ int main(){
     struct Coordinates_min_dist conc[50];
     double n = readfile("output_coords.txt", 1, conc);
     double dist_min = conc[0].distance; 
-    double lat_min = conc[0].lat; //the notation "min" is used to describe the variables when the distance is minimal, it is not the minmimum of each variable
+    double lat_min = conc[0].lat; //the notation "min" is used to describe the variables when the distance is minimal, it is not the minmimum value of each variable
     double lon_min = conc[0].lon;
     double alt_min = conc[0].alt;
     int hour_min = conc[0]. hour;
