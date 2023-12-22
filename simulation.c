@@ -222,7 +222,7 @@ struct time when_to_launch(int hour, int min, int sec, int travel_time){ //trave
 
 int main(){
         // Run Python script using system()
-    int status = system("python3 coord_skyfield.py");
+    int status = system("python coord_skyfield.py");
     
     if (status == -1) {
         printf("Failed to execute the command.\n");
@@ -455,10 +455,10 @@ int main(){
         if(z<0){            //if rocket crashes
            break;
         }
-        printf("temps  : %f secondes, ", t);
-        printf("altitude : %f meters, ", z);
-        printf("mass : %f kg", m);
-        printf(" speed : %f m/s\n", v);
+        //printf("temps  : %f secondes, ", t);
+        //printf("altitude : %f meters, ", z);
+        //printf("mass : %f kg", m);
+        //printf(" speed : %f m/s\n", v);
 
         char temp[1000]; // Temporary string buffer
         sprintf(temp, "%f ; %f ; %f ; %f\n", z, m, v, t); // first one being altitude, then mass, then speed, then time
@@ -489,7 +489,7 @@ int main(){
     printf("The launch time will need to be at %02d:%02d:%02d.\n", launch_time_rocket.hour, launch_time_rocket.min, launch_time_rocket.sec);
 
     // Run Python script using system()
-    int stats = system("python3 graphs.py");
+    int stats = system("python graphs.py");
     
     if (stats == -1) {
         printf("Failed to execute the command.\n");
