@@ -3,12 +3,22 @@
 ## Project Description
 
 This program simulates the trajectory of a rocket and tell us at what time we should launch the rocket in order to achieve the international space station.
+It will
+1. Calculate ISS coordinates ("coord_skyfield")
+2. Find the parameters (simulation.c) and plot the graphs (graphs.py)
+3. Determine launch time ("simulation.c")
+
 
 ## Project Structure
 - "coord_skyfield" contains a function that returns the coordinates of ISS at the time of interest
 - "graphs.py" plots the graphs for our parameters over time
 - "simulation.c" contains the code to run the simulation
 
+### Implementation details
+
+- The code is compiled and run on C. It calls Python functions with the "system" function.
+- Python is used to plot the graphs and find variables with the specific Python library Skyfield
+- C is used to find the needed parameters and output of the program
 
 ## Files
 description des files
