@@ -1,7 +1,11 @@
-from skyfield.api import load, wgs84, Topos #NOTERPERSO: pour cette librairie, l'inclure dans le readme ou les requirements
-                                            #ou alors faire un truc avec conda pour que ca telecharge tout
+from skyfield.api import load, wgs84, Topos
 from skyfield.api import Distance
 from skyfield.toposlib import ITRSPosition
+
+# Most of the calculations of this code come from the skyfield documentation: https://rhodesmill.org/skyfield/
+# This is the personal website of Brandon Rhodes, skyfield library's creator
+# We have mainly used the following subsections: https://rhodesmill.org/skyfield/earth-satellites.html (Earth Satellites)
+# and https://rhodesmill.org/skyfield/positions.html (Positions)
 
 stations_url = 'http://celestrak.org/NORAD/elements/stations.txt'
 satellites = load.tle_file(stations_url)
