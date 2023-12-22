@@ -17,6 +17,9 @@ Code:
 - "*graphs.py*" plots the graphs for our parameters over time
 - "*simulation.c*" contains the code to run the simulation
 
+Inputs:
+- "*stations.txt*" is downloaded by "*coord_skyfield.py*"
+
 Ouputs:
 - "*output.txt*" is a semi-colon delimited file
 - "*ouput_coords.txt*" is a single line file
