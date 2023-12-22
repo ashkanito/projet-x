@@ -10,8 +10,10 @@ from skyfield.toposlib import ITRSPosition
 # Some useful theory used in the calculations:
 # ECEF = Earth-centered Earth-fixed reference system. It is inertial relative to the Earth, assimilated to ITRS
 # GCRS = Geocentric Celestial Reference System
-# Both are different coordinate reference frames used to define positions of variables
+# Both are different coordinate reference frames used to define locations of specific bodies
 # Conversion between them will be necessary for our calculations
+
+# Skyfield vocabulary: "position" and "distance" are two different types of objects
 
 stations_url = 'http://celestrak.org/NORAD/elements/stations.txt'
 satellites = load.tle_file(stations_url)
