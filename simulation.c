@@ -28,11 +28,11 @@ double F_thrust(double t, double t_burn, double thrust) {
 
 
 //2)ATMOSPHERIC DRAG
-//2.1.Densité deuxième version (comme le code et pas le site)
+//The calculations are based on the formulas provided by http://www.braeunig.us/space/atmmodel.htm
 double density(double z) {
     double h = 6356.766*z/(6356.766+z);
     double P;
-    double Tm; //Tm=T*M0/M avec T: Temperature, M: masse molaire à cette hauteur et M0: masse molaire au niveau océan
+    double Tm; //Tm=T*M0/M with T: Temperature, M: specific molar mass at given altitude, M0: molar mass at the level of the ocean
     if (0<h && h<=11) {
         Tm = 288.15-6.5*h;
         P = 101325.0*pow((288.15/(288.15-6.5*h)), 34.1632/-6.5);
