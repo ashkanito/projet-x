@@ -22,8 +22,9 @@ Overview
 - C is used to find the needed parameters and output of the program
 
 Outputs
-- "*output.txt*"
-- "*ouput_coords.txt*"
+- "*output.txt*" is a semi-colon delimited file
+- "*ouput_coords.txt*" is a single line file
+- 
 ## Instructions
 To run the code, first compile *simulation.c*
 ```{bash}
