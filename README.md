@@ -58,7 +58,7 @@ gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 
 Install the Python library Skyfield by typing the following line on the command prompt
 ```{bash}
-pip install Skyfield
+pip install skyfield
 ```
 
 
