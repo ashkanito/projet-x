@@ -21,8 +21,6 @@ Overview
 - Python is used to plot the graphs and find variables with the specific Python library Skyfield
 - C is used to find the needed parameters and output of the program
 
-## Files
-description des files
 ## Modules
 what library to install + how to 
 The library files can be built with 
