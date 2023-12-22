@@ -16,6 +16,7 @@ It will
 
 ### Implementation details
 
+Overview
 - The code is compiled and run on C. It calls Python functions with the "system" function.
 - Python is used to plot the graphs and find variables with the specific Python library Skyfield
 - C is used to find the needed parameters and output of the program
