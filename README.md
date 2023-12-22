@@ -21,7 +21,9 @@ Overview
 - Python is used to plot the graphs and find variables with the specific Python library Skyfield
 - C is used to find the needed parameters and output of the program
 
-
+Outputs
+- "*output.txt*"
+- "*ouput_coords.txt*"
 ## Instructions
 To run the code, first compile *simulation.c*
 ```{bash}
