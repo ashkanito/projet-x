@@ -273,7 +273,7 @@ int main(){
         double m_fuel2_plot;
 
 
-
+    //create a file to write the values to plot in
     FILE *file; // File pointer
     char text[1000000] = "This is a sample text."; // Text to write to the file
     // Reset the text array to an empty string
@@ -285,6 +285,7 @@ int main(){
     double Mach;
     double b;
     double dz=500; //we will evaluate the rocket's behaviour between alt-dz and alt+dz, 500 is set arbitrarily       
+    //for loops that simulates the rocket trajectory in function of the thrusts and the mass of the fuels
     for(double m_fuel2 = 0.1; m_fuel2 <= m_fuel2MAX; m_fuel2+=2500){
 
         for(double m_fuel1 = 0.1; m_fuel1 <= m_fuel1MAX; m_fuel1+=25000){  
@@ -302,7 +303,7 @@ int main(){
                     double m = m_tot;
 
 
-                    
+                    //the t burns are in function of the thrusts and the mass of the fuels
                     int t_burn1;
                     if (FT1 != 0) {
                         t_burn1 = (m_fuel1*g0*I_sp1)/FT1; // tburn of stage 1
@@ -321,10 +322,12 @@ int main(){
                     double t_burn_total = t_burn1 + t_burn2; //Pre-calculate t_burn1 + t_burn2 outside the loop to avoid calculating it in every iteration
                     double epsilon = 1e-10; // to adjust for floating point errors
                     
-
+                    //iteration on time
                     for (double t = 0; t < t_final; t+=dt)
                     {
                         double g = gravity(z);
+                        
+                        //before the first fuel is finished
                         if (t < t_burn1 + epsilon){
                             m -= m_variable(dt, FT1, I_sp1);
                             thrust = F_thrust(t, t_burn1,FT1)/m;              //thrust acceleration 
@@ -332,6 +335,7 @@ int main(){
                                 m -= m1;
                             }
                         }
+                        //before the second fuel is finished
                         else if ((t < t_burn_total + epsilon) && (t > t_burn1 + epsilon)){
                             m -= m_variable(dt, FT2, I_sp2);
                             thrust = F_thrust(t, t_burn_total,FT2)/m;              //thrust acceleration 
@@ -344,6 +348,7 @@ int main(){
                             thrust  = 0;
                             
                         }
+                        
                         double d = density(z);
                         vsound = v_sound(ratio, temperature(z));
                         Mach = M_fct(v,vsound);
@@ -354,6 +359,7 @@ int main(){
                             drag = drag*(-1);
                         }
 
+                        //change of speed and altitude
                         v = v + (thrust - drag - g)*dt;
                         z = z + v * dt;
 
@@ -390,7 +396,8 @@ int main(){
         }
     }
 
-
+//We should have done this differently for a better optimisation
+    //for loop for plotting the values
     double v = v0;
     double z = z0;
     double m_tot_plot = m_fuel1_plot + m_fuel2_plot + m1 + m2 + m_charge + m_finale; //total mass of the rocket (imaginons qu'on rajoute 8 tonnes de marchandises)
@@ -504,6 +511,7 @@ int main(){
     // Close the file
     fclose(file);
 
+    // We asked ChatGPT3.5 again
     // Run Python script using system()
     int stats = system("python graphs.py");
     
