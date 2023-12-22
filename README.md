@@ -27,4 +27,4 @@ gcc.exe (Rev7, Built by MSYS2 project) 13.1.0
 
 
 ## Requirements
-$python --version
+
