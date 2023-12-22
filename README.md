@@ -5,7 +5,10 @@
 This program simulates the trajectory of a rocket and tell us at what time we should launch the rocket in order to achieve the international space station.
 
 ## Project Structure
-"coord_
+"coord_skyfield" contains a function that returns the coordinates of ISS at the time of interest
+"graphs.py" plots the graphs for our parameters over time
+"simulation.c" contains the code to run the simulation
+
 
 ## Files
 description des files
