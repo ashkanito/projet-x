@@ -23,6 +23,7 @@ Inputs:
 Ouputs:
 - "*output.txt*" is a semi-colon delimited file
 - "*ouput_coords.txt*" is a single line file
+- "*final_ouput.txt*" is a two line file
 
 ### Implementation details
 
