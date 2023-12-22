@@ -30,10 +30,11 @@ bash packages.sh
 before running the code
 
 ## Instructions
-The code is run first compile simulation.c
+The code is run first compile *simulation.c*
 ```{bash}
 gcc simulation.c
 ```
+And then run it
 
 ```{bash}
 ./a.exe
